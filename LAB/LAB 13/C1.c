@@ -34,7 +34,7 @@ struct Node* swapPairs(struct Node* head) {
     return dummy.next;
 }
 int main() {
-    struct Node* head = createNode(1);
+    struct Node* head= createNode(1);
     struct Node* temp = head;
     for (int i = 2; i <= 8; i++) {
         temp->next = createNode(i);
