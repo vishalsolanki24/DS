@@ -14,31 +14,19 @@ int pop(){
  int validetion(char ch){
    
     
-        if(ch == '{' || ch =='[' ||ch == '('){
-            push(stack[top]);
+         if (ch == '{' || ch == '[' || ch == '(') {
+        push(ch);
+    } 
+    else if (ch == '}' || ch == ']' || ch == ')') {
+        char x = pop();
+        if ((ch == ')' && x != '(') ||
+            (ch == ']' && x != '[') ||
+            (ch == '}' && x != '{')) {
+            return 0; // Mismatch
         }
-        else if(ch == '}'||ch ==']' || ch == ')'){
-            pop();
-
-        }
-        else if (ch=')'){
-            int x=pop();
-            if (x!=')'){
-                return 1;
-            }
-        }
-        else if (ch=']'){
-            int x=pop();
-            if (x!=']'){
-                return 1;
-            }
-        }
-        else if (ch='}'){
-            int x=pop();
-            if (x!='}'){
-                return 1;
-            }
-        }
+    }
+    return 1; // Valid so fa
+       
     }
     void check(){
         if (top ==-1){
@@ -69,7 +57,7 @@ void main(){
     //  validetion('[');
     //  validetion('{');
     //   validetion('{');
-     validetion('');
+     validetion('{');
      check();
 
 
