@@ -14,9 +14,9 @@ int pop(){
 }
 void eval(char infix[]){
      int top=-1;
-    //  int ans=0;
+    
      for(int i=0;strlen(infix);i++){
-        // char temp=infix[i];
+     
         if (isdigit(infix[i])){
             push(infix[i]-'0');
         }
